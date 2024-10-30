@@ -1,35 +1,35 @@
 import React from "react";
 import Voucher from "./child_components/voucher";
+import Img_voucher from "../images/icon-bangGiacaphe.png";
 
 function section_2() {
   let USD_VND = "24,635";
   let USD_Change = 0;
 
-  let item_voucher = [
+  var item_voucher = [
     {
-      obj: "Chỉ người dùng mới",
+      obj: "Chỉ người dùng mới 2",
       sale: 10,
       minOrder: 500000,
       end: "03/10/2024",
     },
     {
-      obj: "Chỉ người dùng mới",
+      obj: "Chỉ người dùng mới 3",
       sale: 30,
       minOrder: 2000000,
       end: "03/10/2024",
     },
   ];
-
   return (
     <>
-      <div className="container mx-auto p-4 grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="container mx-auto p-4 grid grid-cols-1 lg:grid-cols-2 gap-8 h-fit">
         {/* Bảng giá cà phê */}
         <div className="p-4">
           <h1 className="text-3xl font-bold text-gray-800 mb-16 text-center">
             Bảng giá cà phê hôm nay
           </h1>
           <div className="flex mb-2 gap-3 items-center">
-            <button className="bg-emerald-500 text-white text-xl font-bold px-12 py-3">
+            <button className="hover:bg-emerald-600 bg-emerald-500 text-white text-xl font-bold px-12 py-3">
               Xem ngày khác
             </button>
             <button className="border border-green-500 pl-4 pr-6 py-2 rounded-3xl text-green-500 flex items-center">
@@ -87,7 +87,7 @@ function section_2() {
               Chia sẻ
             </button>
           </div>
-          <table className="w-full text-left">
+          <table className="w-full text-left sm:max-md:m-auto">
             <thead>
               <tr className="text-gray-400 font-norma">
                 <td className="py-2">Thị trường</td>
@@ -131,16 +131,35 @@ function section_2() {
         </div>
 
         {/* Ưu đãi đặc biệt */}
-        <div className="border rounded-lg p-4 shadow-md">
-          <h2 className="text-xl font-bold text-gray-800 mb-4">
-            Ưu đãi đặc biệt dành cho bạn
-          </h2>
+        <div className="md:mt-8 h-fit">
+          <div className="w-fit m-auto">
+            <img
+              className="w-32 hidden lg:block absolute"
+              src={Img_voucher}
+              alt="voucher"
+            />
+          </div>
+          <div className="relative top-24">
+            <div className="bg-gradient-to-b from-green-100 to-white  p-4">
+              <h2 className="text-xl font-bold mb-4 text-center text-3xl text-emerald-600">
+                Ưu đãi đặc biệt dành cho bạn
+              </h2>
+              {item_voucher.map((row, index) => (
+                <Voucher row={row} />
+              ))}
 
-          <Voucher infor={item_voucher} />
-
-          <button className="bg-green-500 text-white px-4 py-2 rounded-lg w-full">
-            Thu thập tất cả
-          </button>
+              {/* <button className="bg-green-500 text-white px-4 py-2 rounded-lg w-full">
+                Thu thập tất cả
+              </button> */}
+              <div className="w-full">
+                <div className="md:w-2/6 m-auto">
+                  <button className="hover:bg-emerald-600 bg-emerald-500 font-medium text-xl text-white py-3 rounded-3xl w-full m-auto mt-4">
+                    Thu thập tất cả
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>

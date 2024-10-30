@@ -1,7 +1,6 @@
 import React from "react";
 import logo from "../images/logo.png";
 import logo_app from "../images/logo-app.png";
-import slide from "../images/background-slide.png";
 import infor_app from "../images/infor-app-in-store.png";
 import qr_app from "../images/QR-app.png";
 import gg_play from "../images/gg-play.png";
@@ -9,11 +8,11 @@ import appstore from "../images/appstore.png";
 import order_icon from "../images/order-icon.png";
 import voucher_icon from "../images/voucher-icon.png";
 import suport_icon from "../images/suport-icon.png";
-
+import SlideBanner from "./child_components/slideBanner";
 function section_1() {
   return (
     <>
-      <section className="bg-green-50 pb-5">
+      <section className="bg-green-50 pb-5 ">
         <div className="m-auto">
           <div className="">
             <div className="container mx-auto flex justify-between items-center py-4 px-6">
@@ -121,101 +120,90 @@ function section_1() {
             </div>
           </div>
           {/* <!-- slide --> */}
-          <div className="container mx-auto mt-4 px-6 md:flex gap-4 ">
-            {/* <!-- Silde --> */}
-            <div className="flex-1 grid-cols-7">
-              <div className="h-full p-3 rounded w-full bg-white rounded-2xl">
+          <SlideBanner />
+          {/* <!-- near slide --> */}
+          <div className="grid-cols-5 lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
+            <div className="h-full p-3 rounded w-full bg-white rounded-2xl">
+              <div className="flex m-auto">
                 <img
-                  className="w-full  object-cover rounded-2xl"
-                  src={slide}
-                  alt="slide"
+                  className="w-24 h-24 rounded-2xl"
+                  src={logo_app}
+                  alt="Logo mb"
                 />
-              </div>
-            </div>
-            {/* <!-- near slide --> */}
-            <div className="grid-cols-5 lg:flex-row space-y-4 lg:space-y-0 lg:space-x-4">
-              <div className="h-full p-3 rounded w-full bg-white rounded-2xl">
-                <div className="flex m-auto">
-                  <img
-                    className="w-24 h-24 rounded-2xl"
-                    src={logo_app}
-                    alt="Logo mb"
-                  />
-                  <div className="flex items-center">
-                    <span className="py-2 px-4 items-center space-x-4 font-bold text-xl text-gray-600">
-                      Tải app CaPheSi
-                    </span>
-                  </div>
-                </div>
-                <div className="my-3 m-auto">
-                  <img
-                    className="w-72 rounded-2xl"
-                    src={infor_app}
-                    alt="Logo mb"
-                  />
-                </div>
-                <div className="flex ">
-                  <div className="m-auto ">
-                    <img className="w-28" src={qr_app} alt="Logo mb" />
-                  </div>
-                  <div className="m-auto md:m-0">
-                    <div className="p-2 rounded-2xl border w-40 m-2">
-                      <a>
-                        <img className="md:w-40 md:h-8" src={appstore} alt="" />
-                      </a>
-                    </div>
-                    <div className="p-2 rounded-2xl border w-40 m-2">
-                      <a>
-                        <img className="md:w-40  md:h-8" src={gg_play} alt="" />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <div>
-                  <span className="text-gray-600">
-                    Quét mã để tải app ngay bây giờ!
+                <div className="flex items-center">
+                  <span className="py-2 px-4 items-center space-x-4 font-bold text-xl text-gray-600">
+                    Tải app CaPheSi
                   </span>
                 </div>
               </div>
+              <div className="my-3 m-auto">
+                <img
+                  className="w-72 rounded-2xl"
+                  src={infor_app}
+                  alt="Logo mb"
+                />
+              </div>
+              <div className="flex ">
+                <div className="m-auto ">
+                  <img className="w-28" src={qr_app} alt="Logo mb" />
+                </div>
+                <div className="m-auto md:m-0">
+                  <div className="p-2 rounded-2xl border w-40 m-2">
+                    <a>
+                      <img className="md:w-40 md:h-8" src={appstore} alt="" />
+                    </a>
+                  </div>
+                  <div className="p-2 rounded-2xl border w-40 m-2">
+                    <a>
+                      <img className="md:w-40  md:h-8" src={gg_play} alt="" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <span className="text-gray-600">
+                  Quét mã để tải app ngay bây giờ!
+                </span>
+              </div>
             </div>
           </div>
-          {/*end slide*/}
-          <div className="">
-            <div className="container mx-auto mt-4 px-6 w-full">
-              {/*Đặt hàng*/}
-              <div className="md:flex gap-5 grid h-56">
-                <div className="md:w-2/6 bg-white grid-cols-4 p-6 mt-4 rounded-lg flex">
-                  <div>
-                    <h2 className=" text-2xl font-bold">Đặt hàng</h2>
-                    <p className="mt-2 text-gray-600">
-                      Đặt hàng nhanh chóng chỉ trong vài phút
-                    </p>
-                  </div>
-                  <img className="w-32 h-32" src={order_icon} alt="" />
+        </div>
+        {/*end slide*/}
+        <div className="">
+          <div className="container mx-auto mt-4 px-6 w-full hidden lg:block">
+            {/*Đặt hàng*/}
+            <div className="md:flex gap-5 grid h-56">
+              <div className="md:w-2/6 bg-white grid-cols-4 p-6 mt-4 rounded-lg flex">
+                <div>
+                  <h2 className=" text-2xl font-bold">Đặt hàng</h2>
+                  <p className="mt-2 text-gray-600 ">
+                    Đặt hàng nhanh chóng chỉ trong vài phút
+                  </p>
                 </div>
-                <div className="md:w-2/6 bg-white p-6 mt-4 grid-cols-4 rounded-lg flex">
-                  {/*Voucher*/}
-                  <div>
-                    <h2 className="text-2xl font-bold">Vouchers</h2>
-                    <p className="mt-2 text-gray-600">
-                      Nhiều voucher giảm giá cực hot
-                    </p>
-                    <button className="border px-7 py-2 rounded-3xl m-6 font-medium text-green-400 border-green-400">
-                      Xem ngay
-                    </button>
-                  </div>
-                  <img className="w-32 h-32" src={voucher_icon} alt="" />
+                <img className="w-32 h-32" src={order_icon} alt="" />
+              </div>
+              <div className="md:w-2/6 bg-white p-6 mt-4 grid-cols-4 rounded-lg flex">
+                {/*Voucher*/}
+                <div>
+                  <h2 className="text-2xl font-bold">Vouchers</h2>
+                  <p className="mt-2 text-gray-600">
+                    Nhiều voucher giảm giá cực hot
+                  </p>
+                  <button className="border px-7 py-2 rounded-3xl m-6 font-medium text-green-400 border-green-400">
+                    Xem ngay
+                  </button>
                 </div>
-                <div className="md:w-2/6 bg-white p-6 mt-4 grid-cols-4 rounded-lg flex">
-                  {/*Hỗ trợ*/}
-                  <div>
-                    <h2 className="text-2xl font-bold">Hỗ trợ, tư vấn</h2>
-                    <p className="mt-2 text-gray-600">
-                      Đội ngũ tư vấn hỗ trợ 24/24
-                    </p>
-                  </div>
-                  <img className="w-32 h-32" src={suport_icon} alt="" />
+                <img className="w-32 h-32" src={voucher_icon} alt="" />
+              </div>
+              <div className="md:w-2/6 bg-white p-6 mt-4 grid-cols-4 rounded-lg flex">
+                {/*Hỗ trợ*/}
+                <div>
+                  <h2 className="text-2xl font-bold">Hỗ trợ, tư vấn</h2>
+                  <p className="mt-2 text-gray-600">
+                    Đội ngũ tư vấn hỗ trợ 24/24
+                  </p>
                 </div>
+                <img className="w-32 h-32" src={suport_icon} alt="" />
               </div>
             </div>
           </div>
